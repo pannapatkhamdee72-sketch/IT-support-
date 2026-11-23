@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f7fb" />
+    <title>IT Support | Update Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="IT Support dashboard home">
+          <span class="brand-mark" aria-hidden="true">IT</span>
+          <span class="brand-name">IT Support <span>Dashboard</span></span>
+        </a>
+        <div class="topbar-meta">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span id="connection-label">API not connected</span>
+        </div>
+      </header>
+
+      <section class="page-heading" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">DEVICE MANAGEMENT</p>
+          <h1 id="page-title">Computer update status</h1>
+          <p class="page-description">Track update progress across your computers.</p>
+        </div>
+        <form class="api-form" id="api-form">
+          <label for="api-url">API endpoint</label>
+          <div class="api-controls">
+            <input id="api-url" name="api-url" type="text" inputmode="url" autocomplete="url" placeholder="https://server.example.com/api/computers or /api/computers" required />
+            <button class="button button-primary" type="submit">
+              <span class="button-icon" aria-hidden="true">↻</span>
+              Refresh data
+            </button>
+            <button class="button button-secondary" id="demo-button" type="button">Load demo</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="error-banner" id="error-banner" role="alert" hidden>
+        <span class="error-icon" aria-hidden="true">!</span>
+        <div>
+          <strong>Unable to load computer data</strong>
+          <p id="error-message"></p>
+        </div>
+      </section>
+
+      <section class="summary-section" aria-labelledby="summary-title">
+        <div class="section-heading">
+          <div>
+            <h2 id="summary-title">Update summary</h2>
+            <p>Computer counts by current update status</p>
+          </div>
+          <span class="last-updated" id="last-updated">No data loaded yet</span>
+        </div>
+
+        <div class="summary-grid">
+          <article class="summary-card card-remaining">
+            <div class="card-topline">
+              <span class="card-label">Remaining</span>
+              <span class="card-icon" aria-hidden="true">!</span>
+            </div>
+            <p class="card-caption">Not updated yet</p>
+            <p class="card-value" id="remaining-count" aria-live="polite">—</p>
+            <p class="card-unit">computers</p>
+          </article>
+          <article class="summary-card card-progress">
+            <div class="card-topline">
+              <span class="card-label">In progress</span>
+              <span class="card-icon" aria-hidden="true">↻</span>
+            </div>
+            <p class="card-caption">Currently updating</p>
+            <p class="card-value" id="progress-count" aria-live="polite">—</p>
+            <p class="card-unit">computers</p>
+          </article>
+          <article class="summary-card card-completed">
+            <div class="card-topline">
+              <span class="card-label">Completed</span>
+              <span class="card-icon" aria-hidden="true">✓</span>
+            </div>
+            <p class="card-caption">Update finished</p>
+            <p class="card-value" id="completed-count" aria-live="polite">—</p>
+            <p class="card-unit">computers</p>
+          </article>
+          <article class="summary-card card-total">
+            <div class="card-topline">
+              <span class="card-label">Total computers</span>
+              <span class="card-icon" aria-hidden="true">▦</span>
+            </div>
+            <p class="card-caption">All reported devices</p>
+            <p class="card-value" id="total-count" aria-live="polite">—</p>
+            <p class="card-unit">computers</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="powerbi-section" aria-labelledby="powerbi-title">
+        <div class="section-heading powerbi-heading">
+          <div>
+            <p class="eyebrow">BUSINESS INTELLIGENCE</p>
+            <h2 id="powerbi-title">Power BI report preview</h2>
+            <p>Update status overview using the same computer data</p>
+          </div>
+          <span class="report-source"><span class="report-source-dot" aria-hidden="true"></span><span id="report-source">Waiting for data</span></span>
+        </div>
+        <div class="report-preview">
+          <div class="report-toolbar">
+            <span class="powerbi-mark" aria-hidden="true">▥</span>
+            <span>Computer Update Overview</span>
+            <span class="report-toolbar-label">REPORT PREVIEW</span>
+          </div>
+          <div class="report-content">
+            <div class="report-kpis">
+              <article class="report-kpi">
+                <span>Total computers</span>
+                <strong id="report-total">—</strong>
+              </article>
+              <article class="report-kpi">
+                <span>Update completion</span>
+                <strong id="report-completion">—</strong>
+              </article>
+              <article class="report-kpi">
+                <span>Remaining</span>
+                <strong id="report-remaining">—</strong>
+              </article>
+            </div>
+            <div class="report-chart-grid">
+              <div class="report-chart">
+                <div class="chart-heading">
+                  <strong>Computers by update status</strong>
+                  <span>Current snapshot</span>
+                </div>
+                <div class="bar-chart" role="img" aria-label="Computer counts by update status">
+                  <div class="bar-row">
+                    <span class="bar-label">Completed</span>
+                    <div class="bar-track"><span class="bar-fill bar-fill-completed" id="bar-completed"></span></div>
+                    <strong id="bar-count-completed">—</strong>
+                  </div>
+                  <div class="bar-row">
+                    <span class="bar-label">In progress</span>
+                    <div class="bar-track"><span class="bar-fill bar-fill-progress" id="bar-progress"></span></div>
+                    <strong id="bar-count-progress">—</strong>
+                  </div>
+                  <div class="bar-row">
+                    <span class="bar-label">Remaining</span>
+                    <div class="bar-track"><span class="bar-fill bar-fill-remaining" id="bar-remaining"></span></div>
+                    <strong id="bar-count-remaining">—</strong>
+                  </div>
+                </div>
+                <div class="chart-legend">
+                  <span><i class="legend-dot legend-completed"></i>Completed</span>
+                  <span><i class="legend-dot legend-progress"></i>In progress</span>
+                  <span><i class="legend-dot legend-remaining"></i>Remaining</span>
+                </div>
+              </div>
+              <div class="report-chart completion-chart">
+                <div class="chart-heading">
+                  <strong>Completion rate</strong>
+                  <span>Completed / total</span>
+                </div>
+                <div class="completion-visual">
+                  <div class="completion-ring" id="completion-ring">
+                    <div class="completion-ring-center">
+                      <strong id="completion-percent">—</strong>
+                      <span>complete</span>
+                    </div>
+                  </div>
+                  <p>Computers with completed updates</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="report-disclaimer">Illustrative dashboard preview — this is not an embedded Power BI Service report. Connect a Power BI workspace report to use Microsoft's interactive report and access controls.</p>
+        </div>
+      </section>
+
+      <section class="devices-section" aria-labelledby="devices-title">
+        <div class="section-heading device-heading">
+          <div>
+            <h2 id="devices-title">Computer list</h2>
+            <p id="list-description">Details reported by the server API</p>
+          </div>
+          <span class="device-count" id="device-count">0 devices</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Computer</th>
+                <th scope="col">Update status</th>
+              </tr>
+            </thead>
+            <tbody id="computer-list">
+              <tr class="empty-row">
+                <td colspan="2">Connect to an API endpoint to load computer data.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <footer class="page-footer" id="page-footer">Data is loaded directly from your configured server API.</footer>
+    </main>
+  </body>
+</html>

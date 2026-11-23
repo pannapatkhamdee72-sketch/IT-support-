@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f7fb">
+    <title>Login Preview | IT Support PHP Demo</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="php.css">
+    <style>
+      .preview-notice {
+        margin: 0 0 14px;
+        padding: 10px 12px;
+        border: 1px solid #f1dfb8;
+        border-radius: 7px;
+        background: #fffaf0;
+        color: #80621e;
+        font-size: 11px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="auth-shell">
+      <a class="brand auth-brand" href="login-preview.html">
+        <span class="brand-mark" aria-hidden="true">IT</span>
+        <span class="brand-name">IT Support <span>PHP Demo</span></span>
+      </a>
+      <section class="auth-card" aria-labelledby="auth-title">
+        <p class="eyebrow">INITIAL SETUP</p>
+        <h1 id="auth-title">Create admin account</h1>
+        <p class="auth-description">Set up the first administrator. No default password is installed.</p>
+        <div class="preview-notice" role="note">Visual preview only — this form does not create an account. Run the PHP server and open <strong>login.php</strong> to use real authentication.</div>
+        <form class="auth-form" onsubmit="return false">
+          <label for="username">Username</label>
+          <input id="username" name="username" type="text" autocomplete="username" minlength="3" maxlength="32" placeholder="Choose a username" required>
+          <label for="password">Create password</label>
+          <input id="password" name="password" type="password" minlength="12" maxlength="1024" autocomplete="new-password" placeholder="At least 12 characters" required>
+          <label for="password-confirmation">Confirm password</label>
+          <input id="password-confirmation" name="password_confirmation" type="password" minlength="12" maxlength="1024" autocomplete="new-password" placeholder="Re-enter password" required>
+          <p class="field-hint">Use 12–1024 characters. Usernames may contain letters, numbers, dots, underscores, and hyphens.</p>
+          <button class="button button-primary auth-submit" type="button">Create administrator</button>
+        </form>
+        <p class="auth-footnote">Account credentials are stored on the server as password hashes.</p>
+      </section>
+    </main>
+  </body>
+</html>

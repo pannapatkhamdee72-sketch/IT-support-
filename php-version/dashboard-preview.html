@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f7fb">
+    <title>PHP Dashboard Preview | IT Support</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="php.css">
+    <style>
+      .preview-notice {
+        margin: -12px 0 25px;
+        padding: 10px 12px;
+        border: 1px solid #f1dfb8;
+        border-radius: 7px;
+        background: #fffaf0;
+        color: #80621e;
+        font-size: 11px;
+        line-height: 1.5;
+      }
+
+      .preview-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .preview-action-button {
+        min-height: 30px;
+        padding: 0 10px;
+        border: 1px solid #e0e6f0;
+        border-radius: 7px;
+        background: #fff;
+        color: #9aa4b4;
+        font: inherit;
+        font-size: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="dashboard-preview.html">
+          <span class="brand-mark" aria-hidden="true">IT</span>
+          <span class="brand-name">IT Support <span>PHP Demo</span></span>
+        </a>
+        <div class="topbar-meta">
+          <span class="live-dot demo" aria-hidden="true"></span>
+          <span>admin · Admin</span>
+          <a class="header-link" href="users-preview.html">Manage users</a>
+          <button class="button button-secondary button-small" type="button" disabled>Log out</button>
+        </div>
+      </header>
+
+      <section class="page-heading" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">SERVER-SIDE RENDERING</p>
+          <h1 id="page-title">Computer update status</h1>
+          <p class="page-description">Signed in as admin · Admin role</p>
+        </div>
+        <button class="button button-secondary" type="button" disabled>Reset demo data</button>
+      </section>
+
+      <div class="preview-notice" role="note">Visual preview only — controls are disabled and do not change accounts or computer data. Start PHP and open <strong>index.php</strong> to use the real demo.</div>
+
+      <section class="summary-section" aria-labelledby="summary-title">
+        <div class="section-heading">
+          <div><h2 id="summary-title">Update summary</h2><p>Counts calculated by PHP from session demo data</p></div>
+          <span class="last-updated">Rendered Nov 22, 2026 · 15:40</span>
+        </div>
+        <div class="summary-grid">
+          <article class="summary-card card-remaining">
+            <div class="card-topline"><span class="card-label">Remaining</span><span class="card-icon" aria-hidden="true">!</span></div>
+            <p class="card-caption">Not updated yet</p><p class="card-value">5</p><p class="card-unit">computers</p>
+          </article>
+          <article class="summary-card card-progress">
+            <div class="card-topline"><span class="card-label">In progress</span><span class="card-icon" aria-hidden="true">↻</span></div>
+            <p class="card-caption">Currently updating</p><p class="card-value">3</p><p class="card-unit">computers</p>
+          </article>
+          <article class="summary-card card-completed">
+            <div class="card-topline"><span class="card-label">Completed</span><span class="card-icon" aria-hidden="true">✓</span></div>
+            <p class="card-caption">Update finished</p><p class="card-value">4</p><p class="card-unit">computers</p>
+          </article>
+          <article class="summary-card card-total">
+            <div class="card-topline"><span class="card-label">Total computers</span><span class="card-icon" aria-hidden="true">▦</span></div>
+            <p class="card-caption">All demo devices</p><p class="card-value">12</p><p class="card-unit">computers</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="powerbi-section" aria-labelledby="report-title">
+        <div class="section-heading powerbi-heading">
+          <div><p class="eyebrow">BUSINESS INTELLIGENCE</p><h2 id="report-title">Power BI-style report preview</h2><p>Server-rendered report example using the same session data</p></div>
+          <span class="report-source"><span class="report-source-dot" aria-hidden="true"></span>PHP session data</span>
+        </div>
+        <div class="report-preview">
+          <div class="report-toolbar"><span class="powerbi-mark" aria-hidden="true">▥</span><span>Computer Update Overview</span><span class="report-toolbar-label">PHP REPORT PREVIEW</span></div>
+          <div class="report-content">
+            <div class="report-kpis">
+              <article class="report-kpi"><span>Total computers</span><strong>12</strong></article>
+              <article class="report-kpi"><span>Update completion</span><strong>33%</strong></article>
+              <article class="report-kpi"><span>Remaining</span><strong>5</strong></article>
+            </div>
+            <div class="report-chart-grid">
+              <div class="report-chart">
+                <div class="chart-heading"><strong>Computers by update status</strong><span>Current snapshot</span></div>
+                <div class="bar-chart" role="img" aria-label="Computer counts by update status">
+                  <div class="bar-row"><span class="bar-label">Completed</span><div class="bar-track"><span class="bar-fill bar-fill-completed" style="width:33.33%"></span></div><strong>4</strong></div>
+                  <div class="bar-row"><span class="bar-label">In progress</span><div class="bar-track"><span class="bar-fill bar-fill-progress" style="width:25%"></span></div><strong>3</strong></div>
+                  <div class="bar-row"><span class="bar-label">Remaining</span><div class="bar-track"><span class="bar-fill bar-fill-remaining" style="width:41.67%"></span></div><strong>5</strong></div>
+                </div>
+                <div class="chart-legend"><span><i class="legend-dot legend-completed"></i>Completed</span><span><i class="legend-dot legend-progress"></i>In progress</span><span><i class="legend-dot legend-remaining"></i>Remaining</span></div>
+              </div>
+              <div class="report-chart completion-chart">
+                <div class="chart-heading"><strong>Completion rate</strong><span>Completed / total</span></div>
+                <div class="completion-visual"><div class="completion-ring" style="--completion:33%"><div class="completion-ring-center"><strong>33%</strong><span>complete</span></div></div><p>Computers with completed updates</p></div>
+              </div>
+            </div>
+          </div>
+          <p class="report-disclaimer">Demo only — the report is rendered by PHP and is not an embedded Power BI Service report.</p>
+        </div>
+      </section>
+
+      <section class="devices-section" aria-labelledby="devices-title">
+        <div class="section-heading device-heading">
+          <div><h2 id="devices-title">Computer list</h2><p>Use an action to update the demo status</p></div>
+          <span class="device-count">12 devices</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Computer</th><th scope="col">Update status</th><th scope="col">Demo action</th></tr></thead>
+            <tbody>
+              <tr><td><span class="computer-name">BKK-OFFICE-001</span></td><td><span class="status-badge status-remaining">Remaining</span></td><td><button class="preview-action-button" type="button" disabled>Mark completed</button></td></tr>
+              <tr><td><span class="computer-name">BKK-OFFICE-002</span></td><td><span class="status-badge status-remaining">Remaining</span></td><td><button class="preview-action-button" type="button" disabled>Mark completed</button></td></tr>
+              <tr><td><span class="computer-name">BKK-OFFICE-003</span></td><td><span class="status-badge status-remaining">Remaining</span></td><td><button class="preview-action-button" type="button" disabled>Mark completed</button></td></tr>
+              <tr><td><span class="computer-name">BKK-OFFICE-004</span></td><td><span class="status-badge status-remaining">Remaining</span></td><td><button class="preview-action-button" type="button" disabled>Mark completed</button></td></tr>
+              <tr><td><span class="computer-name">BKK-OFFICE-005</span></td><td><span class="status-badge status-remaining">Remaining</span></td><td><button class="preview-action-button" type="button" disabled>Mark completed</button></td></tr>
+              <tr><td><span class="computer-name">BKK-OFFICE-006</span></td><td><span class="status-badge status-progress">In progress</span></td><td><button class="preview-action-button" type="button" disabled>Mark completed</button></td></tr>
+              <tr><td><span class="computer-name">BKK-OFFICE-007</span></td><td><span class="status-badge status-progress">In progress</span></td><td><button class="preview-action-button" type="button" disabled>Mark completed</button></td></tr>
+              <tr><td><span class="computer-name">BKK-OFFICE-008</span></td><td><span class="status-badge status-progress">In progress</span></td><td><button class="preview-action-button" type="button" disabled>Mark completed</button></td></tr>
+              <tr><td><span class="computer-name">BKK-OFFICE-009</span></td><td><span class="status-badge status-completed">Completed</span></td><td><span class="already-complete">Done</span></td></tr>
+              <tr><td><span class="computer-name">BKK-OFFICE-010</span></td><td><span class="status-badge status-completed">Completed</span></td><td><span class="already-complete">Done</span></td></tr>
+              <tr><td><span class="computer-name">BKK-OFFICE-011</span></td><td><span class="status-badge status-completed">Completed</span></td><td><span class="already-complete">Done</span></td></tr>
+              <tr><td><span class="computer-name">BKK-OFFICE-012</span></td><td><span class="status-badge status-completed">Completed</span></td><td><span class="already-complete">Done</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <footer class="page-footer">Preview only. PHP session demo data does not update real computers.</footer>
+    </main>
+  </body>
+</html>

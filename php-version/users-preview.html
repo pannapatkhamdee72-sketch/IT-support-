@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f7fb">
+    <title>User Management Preview | IT Support PHP Demo</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="php.css">
+    <style>
+      .preview-notice {
+        margin: -12px 0 25px;
+        padding: 10px 12px;
+        border: 1px solid #f1dfb8;
+        border-radius: 7px;
+        background: #fffaf0;
+        color: #80621e;
+        font-size: 11px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="dashboard-preview.html"><span class="brand-mark" aria-hidden="true">IT</span><span class="brand-name">IT Support <span>PHP Demo</span></span></a>
+        <div class="account-actions"><span class="signed-in-as">Signed in as <strong>admin</strong></span><button class="button button-secondary button-small" type="button" disabled>Log out</button></div>
+      </header>
+      <section class="page-heading">
+        <div><p class="eyebrow">ADMINISTRATION</p><h1>User management</h1><p class="page-description">Create accounts, remove users, and set their access level.</p></div>
+        <a class="button button-secondary back-button" href="dashboard-preview.html">Back to dashboard</a>
+      </section>
+      <div class="preview-notice" role="note">Visual preview only — account controls are disabled. The live PHP page requires the PHP server.</div>
+      <section class="devices-section user-create-section" aria-labelledby="create-title">
+        <div class="section-heading"><div><h2 id="create-title">Add user</h2><p>Create a separate account and assign its access level.</p></div></div>
+        <form class="user-create-form">
+          <label>Username<input type="text" placeholder="new.user" disabled></label>
+          <label>Temporary password<input type="password" placeholder="At least 12 characters" disabled></label>
+          <label>Role<select disabled><option>Viewer</option><option>Operator</option><option>Admin</option></select></label>
+          <button class="button button-primary create-user-button" type="button" disabled>Add account</button>
+          <p class="field-hint">Admin: manage accounts and demo statuses · Operator: change demo statuses · Viewer: read-only</p>
+        </form>
+      </section>
+      <section class="devices-section user-list-section" aria-labelledby="users-title">
+        <div class="section-heading device-heading"><div><h2 id="users-title">Accounts and permissions</h2><p>Admin: manage users · Operator: update demo statuses · Viewer: read-only</p></div><span class="device-count">3 users</span></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Username</th><th scope="col">Role</th><th scope="col">Created</th><th scope="col">Actions</th></tr></thead>
+            <tbody>
+              <tr><td><span class="computer-name">admin</span> <span class="you-label">You</span></td><td><span class="role-badge">Admin</span></td><td>Nov 22, 2026</td><td><span class="you-label">Current account protected</span></td></tr>
+              <tr><td><span class="computer-name">operator1</span></td><td><form class="inline-role-form"><select disabled><option>Operator</option></select><button class="button button-small" type="button" disabled>Save role</button></form></td><td>Nov 22, 2026</td><td><button class="button button-small button-danger" type="button" disabled>Delete</button></td></tr>
+              <tr><td><span class="computer-name">viewer1</span></td><td><form class="inline-role-form"><select disabled><option>Viewer</option></select><button class="button button-small" type="button" disabled>Save role</button></form></td><td>Nov 22, 2026</td><td><button class="button button-small button-danger" type="button" disabled>Delete</button></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <footer class="page-footer">Preview only. Private account data is stored outside the web-served project folder in the live demo.</footer>
+    </main>
+  </body>
+</html>
